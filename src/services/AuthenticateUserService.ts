@@ -31,6 +31,11 @@ export class AuthenticateUserService {
       expiresIn: '1d'
     })
 
-    return token
+    const data = {
+      token,
+      user
+    }
+
+    return data
   }
 }
