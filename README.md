@@ -60,7 +60,7 @@ The server listens to port `3333`
     "username": "string",
     "email": "string",
     "password": "string",
-    "usertype": "string: owner||admin||standart"
+    "usertype": "string: owner || admin || standart"
   }
   ```
 
