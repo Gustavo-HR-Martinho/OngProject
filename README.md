@@ -26,54 +26,58 @@ The server listens to port `3333`
 
 - Get all ongs: `/ongs`
 
-  ```json
-    No body
-  ```
+  <b>No body</b>
 
 - Get ongs by category: `/ongs`
+
+  <b>Body:</b>
+
   ```json
-    Body:
-    {
-      "category": "string"
-    }
+  {
+    "category": "string"
+  }
   ```
 
 ### Post:
 
 - Authenticate user: `/login` (Retuns auth token)
 
+  <b>Body:</b>
+
   ```json
-    Body:
-    {
-      "email": "string",
-      "password": "string"
-    }
+  {
+    "email": "string",
+    "password": "string"
+  }
   ```
 
 - Create user: `/users`
 
+  <b>Body:</b>
+
   ```json
-    Body:
-    {
-      "username": "string",
-      "email": "string",
-      "password": "string",
-      "usertype": "string: owner||admin||standart"
-    }
+  {
+    "username": "string",
+    "email": "string",
+    "password": "string",
+    "usertype": "string: owner||admin||standart"
+  }
   ```
 
-- Create ong: `/ongs` (You must pass the auth token)
+- Create ong: `/ongs` (You must pass the auth token and be an owner)
+
+  <b>Body:</b>
+
   ```json
-    Body:
-    {
-      "ongname": "string",
-      "description": "string",
-      "address": "string",
-      "city": "string",
-      "state": "string",
-      "contactPhone": "string",
-      "contactEmail": "string",
-      "category": "string",
-      "ongPP": "url"
-    }
+  {
+    "ongname": "string",
+    "description": "string",
+    "address": "string",
+    "city": "string",
+    "state": "string",
+    "contactPhone": "string",
+    "contactEmail": "string",
+    "category": "string",
+    "ongPP": "url"
+  }
   ```
