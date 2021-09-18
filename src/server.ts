@@ -6,7 +6,9 @@ import './database/index.ts'
 import { router } from './routes'
 
 const app = express()
+const cors = require('cors')
 
+app.use(cors())
 app.use(express.json())
 app.use(router)
 
