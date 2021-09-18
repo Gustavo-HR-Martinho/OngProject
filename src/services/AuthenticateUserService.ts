@@ -18,7 +18,7 @@ export class AuthenticateUserService {
       throw new Error('Invalid credentials')
     }
 
-    const passwordMatch = compare(password, user.password)
+    const passwordMatch = await compare(password, user.password)
 
     if (!passwordMatch) {
       throw new Error('Invalid credentials')
