@@ -1,13 +1,13 @@
 import { getCustomRepository } from 'typeorm'
 import { OngsRepositories } from '../repositories/OngsRepositories'
 
-export class ListOngsByCategoryService {
-  async execute (ongCategory: string) {
+export class ListOngsByOwnerService {
+  async execute (ownerID: string) {
     const ongsRepository = getCustomRepository(OngsRepositories)
 
     const ongList = await ongsRepository.find({
       where: {
-        category: ongCategory
+        ownerID: ownerID
       }
     })
 

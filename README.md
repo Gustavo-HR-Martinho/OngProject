@@ -1,12 +1,12 @@
 # OngProject - Backend
 
-## Install:
+## <b>Install</b>:
 
 ```
   yarn install
 ```
 
-## Run server:
+## <b>Run server:</b>
 
 The server listens to port `3333`
 
@@ -14,15 +14,15 @@ The server listens to port `3333`
   yarn dev
 ```
 
-## Reset database:
+## <b>Reset database:</b>
 
 1. Delete database file on `/src/database/database.sqlite`
 2. Run `yarn typeorm migration:run` to create new database file.
 3. Check if the new file was created where you deleted the old one.
 
-## Routes:
+## <b>Routes:</b>
 
-### Get:
+### <b>Get:</b>
 
 - Get all ongs: `/ongs`
 
@@ -38,7 +38,17 @@ The server listens to port `3333`
   }
   ```
 
-### Post:
+- Get ongs by owner: `/ongs`
+
+  <b>Body:</b>
+
+  ```json
+  {
+    "ownerID": "string"
+  }
+  ```
+
+### <b>Post:</b>
 
 - Authenticate user: `/login` (Retuns auth token)
 
@@ -71,10 +81,37 @@ The server listens to port `3333`
   ```json
   {
     "ongname": "string",
-    "description": "string",
     "address": "string",
-    "city": "string",
-    "state": "string",
+    "contactPhone": "string",
+    "contactEmail": "string",
+    "category": "string",
+    "ongPP": "url"
+  }
+  ```
+
+### <b>Delete:</b>
+
+- Delete ong: `/ongs` (You must pass the auth token and be an owner)
+
+  <b>Body:</b>
+
+  ```json
+  {
+    "ongID": "string"
+  }
+  ```
+
+### <b>Put:</b>
+
+- Update ong: `/ongs` (You must pass the auth token and be an owner)
+
+  <b>Body:</b>
+
+  ```json
+  {
+    "ongID": "string",
+    "ongname": "string",
+    "address": "string",
     "contactPhone": "string",
     "contactEmail": "string",
     "category": "string",

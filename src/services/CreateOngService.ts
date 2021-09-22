@@ -3,10 +3,7 @@ import { OngsRepositories } from '../repositories/OngsRepositories'
 
 interface IOngRequest {
   ongname: string
-  description: string
   address: string
-  city: string
-  state: string
   contactPhone: string
   contactEmail: string
   category: string
@@ -15,7 +12,7 @@ interface IOngRequest {
 }
 
 export class CreateOngService {
-  async execute ({ ongname, description, address, city, state, contactPhone, contactEmail, category, ongPP, ownerID }: IOngRequest) {
+  async execute ({ ongname, address, contactPhone, contactEmail, category, ongPP, ownerID }: IOngRequest) {
     const ongsRepositories = getCustomRepository(OngsRepositories)
     const ongAlreadyExists = await ongsRepositories.findOne({ ongname })
     if (ongAlreadyExists) {
@@ -24,10 +21,7 @@ export class CreateOngService {
 
     const newOng = ongsRepositories.create({
       ongname,
-      description,
       address,
-      city,
-      state,
       contactPhone,
       contactEmail,
       category,

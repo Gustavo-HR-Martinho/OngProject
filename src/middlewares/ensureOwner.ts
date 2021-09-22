@@ -5,8 +5,6 @@ import { UsersRepositories } from '../repositories/UsersRepositories'
 export async function ensureOwner (request: Request, response: Response, next: NextFunction) {
   const { userID } = request
 
-  console.log(userID)
-
   const usersRepositories = getCustomRepository(UsersRepositories)
 
   const { usertype } = await usersRepositories.findOne(userID)

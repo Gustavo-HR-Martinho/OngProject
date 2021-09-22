@@ -3,16 +3,13 @@ import { CreateOngService } from '../services/CreateOngService'
 
 export class CreateOngController {
   async handle (request: Request, response: Response) {
-    const { ongname, description, address, city, state, contactPhone, contactEmail, category, ongPP } = request.body
+    const { ongname, address, contactPhone, contactEmail, category, ongPP } = request.body
     const { userID } = request
     const createOngService = new CreateOngService()
 
     const newOng = await createOngService.execute({
       ongname,
-      description,
       address,
-      city,
-      state,
       contactPhone,
       contactEmail,
       category,

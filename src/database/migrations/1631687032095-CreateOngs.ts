@@ -16,19 +16,7 @@ export class CreateOngs1631687032095 implements MigrationInterface {
             type: 'varchar'
           },
           {
-            name: 'description',
-            type: 'varchar'
-          },
-          {
             name: 'address',
-            type: 'varchar'
-          },
-          {
-            name: 'city',
-            type: 'varchar'
-          },
-          {
-            name: 'state',
             type: 'varchar'
           },
           {

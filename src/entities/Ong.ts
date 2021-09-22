@@ -11,16 +11,7 @@ export class Ong {
   ongname: string
 
   @Column()
-  description: string
-
-  @Column()
   address: string
-
-  @Column()
-  city: string
-
-  @Column()
-  state: string
 
   @Column()
   contactPhone: string
