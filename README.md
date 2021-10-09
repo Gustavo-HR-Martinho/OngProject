@@ -28,25 +28,13 @@ The server listens to port `3333`
 
   <b>No body</b>
 
-- Get ongs by category: `/ongs`
+- Get ongs by category: `/ongs?category=CATEGORY_NAME`
 
-  <b>Body:</b>
+  <b>No body</b>
 
-  ```json
-  {
-    "category": "string"
-  }
-  ```
+- Get ongs by owner: `/ongs?owner=OWNER_ID`
 
-- Get ongs by owner: `/ongs`
-
-  <b>Body:</b>
-
-  ```json
-  {
-    "ownerID": "string"
-  }
-  ```
+  <b>No body</b>
 
 ### <b>Post:</b>
 

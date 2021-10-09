@@ -5,8 +5,10 @@ import { ListAllOngsService } from '../services/ListOngsService'
 
 export class ListAllOngsController {
   async handle (request: Request, response: Response) {
-    if (request.body.category !== undefined) {
-      const { category } = request.body
+    if (request.query.category !== undefined) {
+      const category = request.query.category as string
+
+      console.log(category)
 
       const listOngsByCategoryService = new ListOngsByCategoryService()
 
@@ -15,8 +17,10 @@ export class ListAllOngsController {
       return response.json(ongList)
     }
 
-    if (request.body.ownerID !== undefined) {
-      const { ownerID } = request.body
+    if (request.query.owner !== undefined) {
+      const ownerID = request.query.owner as string
+
+      console.log(ownerID)
 
       const listOngsByOwnerService = new ListOngsByOwnerService()
 
