@@ -8,8 +8,6 @@ export class ListAllOngsController {
     if (request.query.category !== undefined) {
       const category = request.query.category as string
 
-      console.log(category)
-
       const listOngsByCategoryService = new ListOngsByCategoryService()
 
       const ongList = await listOngsByCategoryService.execute(category)
@@ -19,8 +17,6 @@ export class ListAllOngsController {
 
     if (request.query.owner !== undefined) {
       const ownerID = request.query.owner as string
-
-      console.log(ownerID)
 
       const listOngsByOwnerService = new ListOngsByOwnerService()
 
