@@ -19,6 +19,8 @@ export class DeleteOngService {
 
     try {
       await ongRepository.remove(selectedOng)
+      const ongList = await ongRepository.find()
+      return ongList
     } catch (err) {
       throw new Error(err)
     }

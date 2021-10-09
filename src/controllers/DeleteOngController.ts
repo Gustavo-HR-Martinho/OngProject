@@ -8,8 +8,8 @@ export class DeleteOngController {
     const deleteOngService = new DeleteOngService()
 
     try {
-      await deleteOngService.execute(ongID)
-      return response.status(200).end()
+      const ongList = await deleteOngService.execute(ongID)
+      return response.status(200).json(ongList)
     } catch (err) {
       throw new Error('Ong could not be deleted')
     }
